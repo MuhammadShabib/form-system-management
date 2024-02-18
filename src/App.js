@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import LeaveForm from "./Pages/LeaveForm/LeaveForm"
 import HandoverForm from "./Pages/HandoverForm/HandoverForm"
 import Buttons from "./Pages/Buttons/Buttons";
-import "bootstrap/dist/css/bootstrap.min.css"
+// import "bootstrap/dist/css/bootstrap.min.css"
 import CarRequestForm from "./Pages/CarReequestForm/CarRequestForm";
 import RequestForm from "./Pages/RequestForm/RequestForm";
 import BookRequestForm from "./Pages/BookRequestForm/BookRequestForm"
@@ -12,8 +12,6 @@ const App = () => {
     return (
         <div className="container">
             <Router>
-
-                <img src="./2.jpg" alt="" />
                 <Routes>
                     <Route path="/" element={<Buttons />} />
                     <Route path="/RequestForm" element={<RequestForm />} />

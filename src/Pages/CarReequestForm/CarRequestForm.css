@@ -1,0 +1,43 @@
+.car-request-form {
+    background-color: #74b9ff76;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.car-request-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signature {
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 80px; */
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+@media print {
+    .car-request-form {
+        /* background-color: #fff; */
+        border-radius: none;
+        padding: 0px;
+    }
+
+    .car-request-form form .input {
+        display: flex;
+    }
+
+    .car-request-form form .input input {
+        border: none;
+        border-bottom: 1px solid #000;
+        border-radius: 0;
+    }
+
+    .car-request-form form button {
+        display: none;
+    }
+}
