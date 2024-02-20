@@ -1,17 +1,35 @@
 .container {
-    margin: 20px 0;
+    /* margin: 20px 0; */
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 2px 8px 10px 3px rgba(0, 0, 0, 0.155);
+    border-radius: 7px;
+}
+
+form {
     padding: 20px;
-    box-shadow: 2px 8px 10px 3px rgba(0, 0, 0, 0.5);
 }
 
 .beside {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .beside div {
-    width: 50%;
+    width: 47%;
     margin: 3px;
+}
+
+.besidemore {
+    display: flex;
+    gap: 10px;
+}
+
+.besidemore div {
+    width: auto;
+    margin: 3px;
+    margin-bottom: 5px;
 }
 
 @page {
@@ -24,34 +42,28 @@
         margin: 0 !important;
         padding: 0 !important;
     }
-
     body {
         width: 100vw;
     }
-
     .container {
         width: 95% !important;
         margin: auto !important;
         margin-top: 20px !important;
     }
-
     form .input {
         display: flex;
     }
-
-    form input,
+    /* form input,
     textarea {
         border: none !important;
         border-bottom: 1px solid #000 !important;
         border-radius: 0 !important;
         margin-top: 4px !important;
-    }
-
+    } */
     form label {
         margin-top: 4 !important;
     }
-
-    .bnts {
-        display: none !important;
+    .sign {
+        visibility: hidden;
     }
 }
