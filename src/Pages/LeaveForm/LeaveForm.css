@@ -1,0 +1,57 @@
+.container {
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 2px 8px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+.beside {
+    display: flex;
+    gap: 10px;
+}
+
+.beside div {
+    width: 50%;
+    margin: 3px;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    * {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body {
+        width: 100vw;
+    }
+
+    .container {
+        width: 95% !important;
+        margin: auto !important;
+        margin-top: 20px !important;
+    }
+
+    form .input {
+        display: flex;
+    }
+
+    form input,
+    textarea {
+        border: none !important;
+        border-bottom: 1px solid #000 !important;
+        border-radius: 0 !important;
+        margin-top: 4px !important;
+    }
+
+    form label {
+        margin-top: 4 !important;
+    }
+
+    .bnts {
+        display: none !important;
+    }
+}

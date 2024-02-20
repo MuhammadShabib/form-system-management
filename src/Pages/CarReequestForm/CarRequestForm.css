@@ -1,5 +1,5 @@
 .car-request-form {
-    background-color: #74b9ff76;
+    /* background-color: #74b9ff76; */
     border-radius: 10px;
     padding: 20px;
 }
@@ -20,7 +20,16 @@ img {
     height: 100px;
 }
 
+@page {
+    size: Envelope C5;
+    margin: 0;
+}
+
 @media print {
+    .container {
+        box-shadow: none;
+    }
+
     .car-request-form {
         /* background-color: #fff; */
         border-radius: none;
@@ -31,9 +40,9 @@ img {
         display: flex;
     }
 
-    .car-request-form form .input input {
+    .car-request-form form input {
         border: none;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid #000 !important;
         border-radius: 0;
     }
 
