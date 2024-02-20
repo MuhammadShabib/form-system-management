@@ -2,12 +2,16 @@
     width: 200px;
     height: 220px;
     border-radius: 8px;
-    border: 1px solid #0094f7;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 10px;
+    box-shadow: 2px 8px 10px 3px rgba(0, 0, 0, 0.21);
+}
+
+.button:hover {
+    box-shadow: 2px 5px 8px 1px rgba(0, 0, 0, 0.21);
 }
 
 span>:first-child {
@@ -16,7 +20,7 @@ span>:first-child {
     height: 100px;
 }
 
-.buttona a {
+.button a {
     padding: 10px 20px !important;
     border: none;
     background-color: #ffffff00;
@@ -24,11 +28,21 @@ span>:first-child {
     border: 1px solid #0094f7;
     border-radius: 5px;
     text-decoration: none;
-    padding: 10px 20px;
     text-decoration: none !important;
 }
 
-.button a {
+.button a:hover {
     background-color: #0094f7;
-    color: #fff;
+    color: white;
+}
+
+.bnts {
+    margin: 20px !important;
+    text-align: center;
+}
+
+@media print {
+    .bnts {
+        display: none !important;
+    }
 }

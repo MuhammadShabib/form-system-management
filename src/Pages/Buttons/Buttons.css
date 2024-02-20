@@ -4,36 +4,9 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
-    background-color: #b4ff4470;
-    height: 70vh;
+    /* background-color: #b4ff4470; */
+    /* height: 70vh; */
     border-radius: 10px;
     margin-top: 100px;
+    /* box-shadow: 2px 5px 10px rgba(0, 0, 0, .4); */
 }
-
-
-/* .buttons::after {
-    width: 500px;
-    height: 500px;
-    top: 250px;
-    border-radius: 50%;
-    content: "";
-    position: absolute;
-    background-color: aqua;
-    z-index: -1;
-    filter: blur(10px);
-}
-
-.buttons::before {
-    width: 500px;
-    height: 500px; 
-    border-radius: 50%; 
-    content: "";
-    position: absolute;
-    background-color: rgb(108, 130, 255);
-    top: 0;
-    left: 100px;
-    z-index: -1;
-    filter: blur(10px);
-}
-
-*/
