@@ -1,23 +1,21 @@
 .car-request-form {
-    /* background-color: #74b9ff76; */
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px;
 }
 
-.car-request-form form {
-    display: flex;
-    flex-direction: column;
+.car-request-form input {
+    padding: 10px 20px;
 }
 
 .signature {
     display: flex;
     justify-content: space-between;
-    /* margin-top: 80px; */
 }
 
-img {
-    width: 100px;
-    height: 100px;
+.beside {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 @page {
@@ -26,27 +24,19 @@ img {
 }
 
 @media print {
+    * {
+        margin: 0;
+        padding: 0;
+    }
     .container {
         box-shadow: none;
     }
-
     .car-request-form {
-        /* background-color: #fff; */
         border-radius: none;
-        padding: 0px;
+        padding: 20px !important;
+        border: 1px solid black;
     }
-
-    .car-request-form form .input {
-        display: flex;
-    }
-
-    .car-request-form form input {
-        border: none;
-        border-bottom: 1px solid #000 !important;
-        border-radius: 0;
-    }
-
-    .car-request-form form button {
-        display: none;
+    .car-request-form input {
+        padding: 10px 20px !important;
     }
 }
