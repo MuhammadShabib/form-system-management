@@ -1,0 +1,34 @@
+.on {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+}
+
+.be {
+    width: 100% !important;
+}
+
+.sign1 {
+    justify-content: space-between;
+    width: 100% !important;
+}
+
+.sign2 {
+    width: 50% !important;
+    justify-content: space-between;
+}
+
+.third {
+    justify-content: space-around;
+}
+
+.third input {
+    display: inline-block;
+}
+
+@media print {
+    .container {
+        box-shadow: none !important;
+        margin: 0;
+    }
+}
