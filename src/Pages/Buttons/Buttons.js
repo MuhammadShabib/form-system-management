@@ -20,12 +20,6 @@ const Buttons = () => {
                     path="/RequestForm"
                 />
                 <Button
-                    icon={<Icon.ArrowUp />}
-                    formName="Handover Form"
-                    path="/HandoverForm"
-                />
-
-                <Button
                     icon={<Icon.CarFrontFill />}
                     formName="Car request Form"
                     path="/CarRequestForm"
@@ -34,6 +28,11 @@ const Buttons = () => {
                     icon={<Icon.Book />}
                     formName="Book request Form"
                     path="/BookRequestForm"
+                />
+                <Button
+                    icon={<Icon.ArrowUp />}
+                    formName="Handover Form"
+                    path="/HandoverForm"
                 />
                 <Button
                     icon={<Icon.PenFill />}

@@ -6,7 +6,7 @@ const LinkButtons = () => {
         <div className="bnts">
             <button className='btn btn-primary me-3' onClick={window.print}> Print</button>
             <Link className='ms-auto btn btn-outline-primary' to="/">Back To Home Page</Link>
-            <input className='btn btn-primary ms-3' type="reset" />
+            <input type="reset" className='btn btn-primary ms-3' value=" Reset" />
         </div>
     )
 }
