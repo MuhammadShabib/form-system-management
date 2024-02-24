@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import "../Pages.css"
+import LinkButtons from "../../Components/Button/PrintResetHome"
+import "./HandoverForm.css"
 const HandoverForm = () => {
     const [receiverName, setReceiverName] = useState('');
     const [jobTitle, setJobTitle] = useState('');
@@ -30,7 +33,7 @@ const HandoverForm = () => {
     const [itemsReturned, setItemsReturned] = useState('');
     const [statusOfItem, setStatusOfItem] = useState('');
     const [returnedTo, setReturnedTo] = useState('');
-    const [signature, setSignature] = useState('');
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -46,130 +49,199 @@ const HandoverForm = () => {
     };
     return (
         <>
-            <div>
-                <img src="path-to-logo" alt="WASSA Logo" />
-                <h1>Women Activities and Social Services Association (WASSA)</h1>
-                <h2>Equipment Handover Sheet</h2>
-                <p>Date: {new Date().toLocaleDateString('en-GB')}</p>
+            <div className="container">
+                <form >
+                    <div>
+                        <img src="path-to-logo" alt="WASSA Logo" />
+                        <h1>Women Activities and Social Services Association (WASSA)</h1>
+                        <h2>Equipment Handover Sheet</h2>
+                        <p>Date: {new Date().toLocaleDateString('en-GB')}</p>
+                        <div className='beside'>
+                            < div>
+                                <label>Receiver's Name:</label>
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    name="receiverName"
+                                    value={receiverName}
+                                    onChange={handleChange}
+                                />
+                            </div>
 
-                <label>
-                    Receiver's Name:
-                    <input
-                        type="text"
-                        name="receiverName"
-                        value={receiverName}
-                        onChange={handleChange}
-                    />
-                </label>
+                            <div>
+                                <label>Job Title: </label>
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    name="jobTitle"
+                                    value={jobTitle}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                        </div>
 
-                <label>
-                    Job Title:
-                    <input
-                        type="text"
-                        name="jobTitle"
-                        value={jobTitle}
-                        onChange={handleChange}
-                    />
-                </label>
 
-                <label>
-                    Job Location:
-                    <input
-                        type="text"
-                        name="jobLocation"
-                        value={jobLocation}
-                        onChange={handleChange}
-                    />
-                </label>
+                        <div className='beside mb-4'>
+                            <div>
+                                <label>Job Location:</label>
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    name="jobLocation"
+                                    value={jobLocation}
+                                    onChange={handleChange}
+                                />
+                            </div>
 
-                <label>
-                    Expected Date of Return:
-                    <input
-                        type="date"
-                        name="expectedDateOfReturn"
-                        value={expectedDateOfReturn}
-                        onChange={handleChange}
-                    />
-                </label>
+                            <div>
+                                <label>Expected Date of Return: </label>
+                                <input
+                                    className="form-control"
+                                    type="date"
+                                    name="expectedDateOfReturn"
+                                    value={expectedDateOfReturn}
+                                    onChange={handleChange}
+                                />
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    {/* Table */}
+                    <div>
+                        <p>request WASSA Office to kindly issue me the following equipment as needed for my official works: </p>
+                        <table className='table' border="1">
+                            <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Name of Item</th>
+                                    <th>Qty</th>
+                                    <th>Sr. No</th>
+                                    <th>Tag#</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {rows.map((row, index) => (
+                                    <tr key={index}>
+                                        <td>{row.sn}</td>
+                                        <td><input
+                                            className="form-control"
+                                            type="text" value={row.name} onChange={(e) => handleInputChange(index, 'name', e.target.value)} /></td>
+                                        <td><input
+                                            className="form-control"
+                                            type="text" value={row.qty} onChange={(e) => handleInputChange(index, 'qty', e.target.value)} /></td>
+                                        <td><input
+                                            className="form-control"
+                                            type="text" value={row.srNo} onChange={(e) => handleInputChange(index, 'srNo', e.target.value)} /></td>
+                                        <td><input
+                                            className="form-control"
+                                            type="text" value={row.tag} onChange={(e) => handleInputChange(index, 'tag', e.target.value)} /></td>
+                                        <td><input
+                                            className="form-control"
+                                            type="text" value={row.status} onChange={(e) => handleInputChange(index, 'status', e.target.value)} /></td>
+                                        <td>
+                                            <button className='btn btn-danger' onClick={() => handleDeleteRow(index)}>Delete</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                        <button className='btn btn-success my-4' onClick={handleAddRow}>Add Row</button>
+                    </div>
+                    {/*  End Of table */}
+
+
+                    <div>
+                        <div className='beside'>
+                            <div>
+                                <label>Equipment Handover By ICT Dept:</label>
+                                <input
+                                    className="form-control"
+                                    type="text" placeholder="Name" />
+                            </div>
+                            <div>
+                                <label htmlFor="">Signature:</label>
+                                <div style={{ width: "300px", height: "70px", border: "1px solid #000" }} > </div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div className='beside'>
+                            <div>
+                                <label>Approved by:</label>
+                                <input
+                                    className="form-control"
+                                    type="text" placeholder="Name" />
+                            </div>
+                            <div>
+                                <label htmlFor="">Signature:</label>
+                                <div style={{ width: "300px", height: "70px", border: "1px solid #000" }} > </div>
+
+                            </div>
+                        </div>
+
+
+                        <hr />
+
+                        <div className='beside'>
+                            <div></div>
+                            <div>
+                                <label>Signature of Receiver:</label>
+                                <div style={{ width: "300px", height: "70px", border: "1px solid #000" }} > </div>
+
+                            </div>
+                        </div>
+                        <hr />
+
+                        <p className='text-center bg-secondary text-white p-2'>For Office Use Only:</p>
+                        <div className='besidemore'>
+                            <div>
+                                <label>Returned on:</label>
+                                <input
+                                    className="form-control"
+                                    type="date" value={returnedOn} onChange={(e) => setReturnedOn(e.target.value)} />
+                            </div>
+
+                            <div>
+                                <label>No. of Items returned: </label>
+                                <input
+                                    className="form-control"
+                                    type="number" value={itemsReturned} onChange={(e) => setItemsReturned(e.target.value)} />
+                            </div>
+
+                            <div>
+                                <label>Status of Item:</label>
+                                <input
+                                    className="form-control"
+                                    type="text" value={statusOfItem} onChange={(e) => setStatusOfItem(e.target.value)} />
+                            </div>
+                        </div>
+
+                        <div className='beside'>
+                            <div>
+                                <label> Returned to:</label>
+                                <input
+                                    className="form-control"
+                                    type="text" value={returnedTo} onChange={(e) => setReturnedTo(e.target.value)} />
+                            </div>
+
+                            <div>
+                                <label> Signature: </label>
+                                <div style={{ width: "300px", height: "70px", border: "1px solid #000" }} > </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <LinkButtons />
+                </form>
             </div>
-            {/* Table */}
-            <div>
-                <button onClick={handleAddRow}>Add Row</button>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>S/N</th>
-                            <th>Name of Item</th>
-                            <th>Qty</th>
-                            <th>Sr. No</th>
-                            <th>Tag#</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {rows.map((row, index) => (
-                            <tr key={index}>
-                                <td>{row.sn}</td>
-                                <td><input type="text" value={row.name} onChange={(e) => handleInputChange(index, 'name', e.target.value)} /></td>
-                                <td><input type="text" value={row.qty} onChange={(e) => handleInputChange(index, 'qty', e.target.value)} /></td>
-                                <td><input type="text" value={row.srNo} onChange={(e) => handleInputChange(index, 'srNo', e.target.value)} /></td>
-                                <td><input type="text" value={row.tag} onChange={(e) => handleInputChange(index, 'tag', e.target.value)} /></td>
-                                <td><input type="text" value={row.status} onChange={(e) => handleInputChange(index, 'status', e.target.value)} /></td>
-                                <td>
-                                    <button onClick={() => handleDeleteRow(index)}>Delete</button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-            {/*  End Of table */}
 
 
-            <div>
-                <label>
-                    Equipment Handover By ICT Dept:
-                    <input type="text" placeholder="Name" />
-                    <input type="text" placeholder="Signature" />
-                </label>
-                <hr />
-
-                <label>
-                    Approved by:
-                    <input type="text" placeholder="Name" />
-                    <input type="text" placeholder="Signature" />
-                </label>
-                <hr />
-
-                <label>
-                    Signature of Receiver:
-                    <input type="text" />
-                </label>
-                <hr />
-
-                <p>For Office Use Only:</p>
-                <label>
-                    Returned on:
-                    <input type="date" value={returnedOn} onChange={(e) => setReturnedOn(e.target.value)} />
-                </label>
-                <label>
-                    No. of Items returned:
-                    <input type="number" value={itemsReturned} onChange={(e) => setItemsReturned(e.target.value)} />
-                </label>
-                <label>
-                    Status of Item:
-                    <input type="text" value={statusOfItem} onChange={(e) => setStatusOfItem(e.target.value)} />
-                </label>
-                <label>
-                    Returned to:
-                    <input type="text" value={returnedTo} onChange={(e) => setReturnedTo(e.target.value)} />
-                </label>
-                <label>
-                    Signature:
-                    <input type="text" value={signature} onChange={(e) => setSignature(e.target.value)} />
-                </label>
-            </div>
         </>
     );
 
