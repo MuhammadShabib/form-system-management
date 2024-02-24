@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import "./LeaveForm.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import PrintResetHome from '../../Components/Button/PrintResetHome';
@@ -15,8 +14,8 @@ const LeaveForm = () => {
     const [totalDays, setTotalDays] = useState('');
     const [totalHours, setTotalHours] = useState('');
     const [employee, setEmployee] = useState('');
-    const [supervisorApproval, setSupervisorApproval] = useState('');
-    const [doctorApproval, setDoctorApproval] = useState('');
+    // const [supervisorApproval, setSupervisorApproval] = useState('');
+    // const [doctorApproval, setDoctorApproval] = useState('');
     return (
 
         <>
@@ -224,13 +223,8 @@ const LeaveForm = () => {
                     <div className='beside mt-3'>
                         <div>
                             <label className="form-label" htmlFor="employeeSignature">Employee’s Signature:</label>
-                            <input
-                                className="form-control"
-                                type="text"
-                                id="employeeSignature"
-                                name="employeeSignature"
-                                required
-                            />
+                            <div style={{ height: "100px", border: "1px solid black" }}></div>
+
                         </div>
                         <div>
                             <label className="form-label" htmlFor="signatureDate">Date of Signature:</label>
@@ -253,21 +247,24 @@ const LeaveForm = () => {
                                 type="number"
                                 id="leaveDaysAvailable"
                                 name="leaveDaysAvailable"
-                                placeholder="Annual"
+                                // placeholder="Annual"
+                                disabled
                             />
                             <input
                                 className="form-control"
                                 type="number"
                                 id="leaveDaysAvailable"
                                 name="leaveDaysAvailable"
-                                placeholder="Sick"
+                                // placeholder="Sick"
+                                disabled
                             />
                             <input
                                 className="form-control"
                                 type="number"
                                 id="leaveDaysAvailable"
                                 name="leaveDaysAvailable"
-                                placeholder="Other"
+                                // placeholder="Other"
+                                disabled
                             />
                         </div>
 
@@ -279,21 +276,26 @@ const LeaveForm = () => {
                                 type="number"
                                 id="leaveDaysRemaining"
                                 name="leaveDaysRemaining"
-                                placeholder="Annual"
+                                // placeholder="Annual"
+                                disabled
                             />
                             <input
                                 className="form-control"
                                 type="number"
                                 id="leaveDaysRemaining"
                                 name="leaveDaysRemaining"
-                                placeholder="Sick"
+                                // placeholder="Sick"
+                                disabled
                             />
                             <input
                                 className="form-control"
                                 type="number"
                                 id="leaveDaysRemaining"
                                 name="leaveDaysRemaining"
-                                placeholder="Other"
+                                // placeholder="Other"
+                                style={{ background: "fff !important", }}
+
+                                disabled
                             />
 
                         </div>
@@ -327,33 +329,18 @@ const LeaveForm = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className='beside'>
                         {/* Supervisor's Approval/Comments */}
                         <div>
                             <label className="form-label" htmlFor="supervisorApproval">Supervisor's Approval/Comments:</label>
-                            <textarea
-                                className="form-control"
-                                id="supervisorApproval"
-                                name="supervisorApproval"
-                                rows="2"
-                                cols="50"
-                                value={supervisorApproval}
-                                onChange={(e) => setSupervisorApproval(e.target.value)}
-                            ></textarea>
+                            <div style={{ width: "200px", height: "200px", border: "1px solid black" }}></div>
+
                         </div>
 
                         {/* Doctor's Approval */}
                         <div>
                             <label className="form-label" htmlFor="doctorApproval">Doctor's Approval:</label>
-                            <textarea
-                                className="form-control"
-                                id="doctorApproval"
-                                name="doctorApproval"
-                                rows="2"
-                                cols="50"
-                                value={doctorApproval}
-                                onChange={(e) => setDoctorApproval(e.target.value)}
-                            ></textarea>
+                            <div style={{ width: "200px", height: "200px", border: "0.5px solid black" }}></div>
                         </div>
                     </div>
                     <PrintResetHome />

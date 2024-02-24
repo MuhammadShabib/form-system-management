@@ -5,7 +5,7 @@ import "./RequestForm.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import RequestTable from "../../Components/TableOfRequest/TableOfRequest"
 const RequestForm = () => {
-    const [dateOfRequest, setDateOfRequest] = useState('');
+    // const [dateOfRequest, setDateOfRequest] = useState('');
     const [dateRequired, setDateRequired] = useState('');
     const [projectDepartment, setProjectDepartment] = useState('');
     const [budgetLine, setBudgetLine] = useState('');
@@ -26,7 +26,13 @@ const RequestForm = () => {
     const [position5, setPosition5] = useState('');
     const [dateOfVerifiedBy, setDateOfVerifiedBy] = useState('');
     const [dateOfCheckedBy, setDateOfCheckedBy] = useState('');
-    const [dateOfApprovedBy, setDateOfApprovedBy] = useState('');
+    // const [dateOfApprovedBy, setDateOfApprovedBy] = useState('');
+    const now = new Date();
+    // Format the date components
+    const day = ("0" + now.getDate()).slice(-2);
+    const month = ("0" + (now.getMonth() + 1)).slice(-2);
+    const today = now.getFullYear() + "-" + month + "-" + day;
+    // const date = document.getElementById("date1").value;
     return (
         <div className="container">
             <form>
@@ -34,7 +40,8 @@ const RequestForm = () => {
                 <div className="beside">
                     <div>
                         <label className="form-label">Date of Request:</label>
-                        <input className="form-control" type="date" value={dateOfRequest} onChange={(e) => setDateOfRequest(e.target.value)} />
+                        <input className="form-control" type="date" id="date1" value={today} />
+                        {/* value={dateOfRequest} onChange={(e) => setDateOfRequest(e.target.value)} */}
                     </div>
                     <div>
                         <label className="form-label">Date Required:</label>
@@ -173,7 +180,8 @@ const RequestForm = () => {
                         </div>
                         <div>
                             <label className="form-label">Date:</label>
-                            <input className="form-control" type="date" value={dateOfApprovedBy} onChange={(e) => setDateOfApprovedBy(e.target.value)} />
+                            {/* <input className="form-control" type="date" value={dateOfApprovedBy} onChange={(e) => setDateOfApprovedBy(e.target.value)} /> */}
+                            <p>{today}</p>
                         </div>
                     </div>
 
