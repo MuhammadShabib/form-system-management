@@ -8,6 +8,10 @@ const Buttons = () => {
     // let navigate = useNavigate()
     return (
         <div className="container">
+            <div className="header1">
+                <img src="2.jpg" alt="" />
+                <h1>WASSA</h1>
+            </div>
             <div className="buttons">
                 <Button
                     icon={<Icon.DoorOpenFill />}
