@@ -17,49 +17,33 @@ const RequestTable = () => {
     // Add more initial rows as needed
   ]);
 
-  const addRow = () => {
+  const addRow = (e) => {
     const newRowNumber = rows.length + 1;
-    setRows([
-      ...rows,
-      {
-        rowNumber: newRowNumber,
-        qty: '',
-        description: '',
-        estimatedUnit: '',
-        estimatedPrice: '',
-        estimatedTotal: '',
-        actualPrice: '',
-        approval: '',
-      },
+    setRows([...rows,
+    {
+      rowNumber: newRowNumber,
+      qty: '',
+      description: '',
+      estimatedUnit: '',
+      estimatedPrice: '',
+      estimatedTotal: '',
+      actualPrice: '',
+      approval: ''
+    },
+
     ]);
+    e.preventDefault();
   };
 
   const deleteRow = (index) => {
     const newRows = [...rows];
-    // if (index === 0) {
-    //   alert("You Can not delete this")
-    // }
     newRows.splice(index, 1);
-
     setRows(newRows);
   };
 
   const handleInputChange = (index, field, value) => {
     const updatedRows = [...rows];
     updatedRows[index][field] = value;
-
-    // Calculate Estimated Total
-    if (field === 'qty' || field === 'estimatedPrice') {
-      const qty = parseFloat(updatedRows[index].qty) || 0;
-      const price = parseFloat(updatedRows[index].estimatedPrice) || 0;
-      updatedRows[index].estimatedTotal = (qty * price).toFixed(2);
-    }
-    // Calculate Total Estimated Cost for all items
-    // const totalEstimatedCost = updatedRows.reduce(
-    //   (acc, row) => acc + parseFloat(row.estimatedTotal || 0),
-    //   0
-    // );
-    // updatedRows[updatedRows.length - 1].estimatedTotal = totalEstimatedCost.toFixed(2);
     setRows(updatedRows);
   };
 
@@ -91,8 +75,10 @@ const RequestTable = () => {
                 />
               </td>
               <td>
-                <input
+                <textarea
                   type="text"
+                  style={{ border: "none", width: "100%" }}
+
                   value={row.description}
                   onChange={(e) => handleInputChange(index, 'description', e.target.value)}
                 />
@@ -134,18 +120,6 @@ const RequestTable = () => {
             </tr>
           ))}
         </tbody>
-        {/* <tfoot>
-          {{
-            if(row = "0") {
-
-              <tr>
-                <td colSpan="5">Total Estimated Cost:</td>
-                <td>{rows[rows.length - 1].estimatedTotal}</td>
-              </tr>
-
-            }
-          }}
-        </tfoot> */}
       </table>
       <button className='btn btn-success' onClick={addRow}>Add Row</button>
     </div >

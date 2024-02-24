@@ -14,15 +14,15 @@ const CarRequestForm = () => {
     return (
         <div className="car-request-form mt-5 container">
             <div className="header">
-                {/* <img src="../../1.jpg" alt="" /> */}
+                <img src="./1.jpg" alt="logo" />
                 <h2 className='text-center'>Car Request Form</h2>
             </div>
             <form className='m-4'>
                 <div className='beside'>
                     <div className="mb-3 ">
-                        <label class="form-label">Name:</label>
+                        <label className="form-label">Name:</label>
                         <input
-                            class="form-control"
+                            className="form-control"
                             placeholder='Name of Person Requesting Car'
                             type="text"
                             value={formData.personName}
@@ -31,9 +31,9 @@ const CarRequestForm = () => {
                     </div>
 
                     <div className="mb-3">
-                        <label class="form-label">Branch Name:</label>
+                        <label className="form-label">Branch Name:</label>
                         <input
-                            class="form-control"
+                            className="form-control"
                             placeholder='Branch Name'
                             type="text"
                             value={formData.branchName}
@@ -44,9 +44,9 @@ const CarRequestForm = () => {
 
                 <div className='beside'>
                     <div className="mb-3 ">
-                        <label class="form-label">Date of Requesting:</label>
+                        <label className="form-label">Date of Requesting:</label>
                         <input
-                            class="form-control"
+                            className="form-control"
                             type="date"
                             value={formData.requestDate}
                             onChange={(e) => setFormData({ ...formData, requestDate: e.target.value })}
@@ -54,9 +54,9 @@ const CarRequestForm = () => {
                     </div>
 
                     <div className="mb-3 ">
-                        <label class="form-label">Time of Requesting:</label>
+                        <label className="form-label">Time of Requesting:</label>
                         <input
-                            class="form-control"
+                            className="form-control"
                             type="time"
                             value={formData.requestTime}
                             onChange={(e) => setFormData({ ...formData, requestTime: e.target.value })}
@@ -65,9 +65,9 @@ const CarRequestForm = () => {
                 </div>
 
                 <div className="mb-3 ">
-                    <label class="form-label">Destination:</label>
+                    <label className="form-label">Destination:</label>
                     <input
-                        class="form-control"
+                        className="form-control"
                         type="text"
                         value={formData.destination}
                         onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
@@ -75,9 +75,9 @@ const CarRequestForm = () => {
 
                 </div>
                 <div className="mb-3 ">
-                    <label class="form-label">Purpose of Travel:</label>
+                    <label className="form-label">Purpose of Travel:</label>
                     <input
-                        class="form-control"
+                        className="form-control"
                         type='text'
                         value={formData.purpose}
                         onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
@@ -85,8 +85,8 @@ const CarRequestForm = () => {
                 </div>
 
                 <div className='signature mt-5'>
-                    <label class="form-label me-3">Supervisor's Signature:</label>
-                    <label class="form-label ms-5">Office Approval Signature:</label>
+                    <label className="form-label me-3">Supervisor's Signature:</label>
+                    <label className="form-label ms-5">Office Approval Signature:</label>
 
                 </div>
 

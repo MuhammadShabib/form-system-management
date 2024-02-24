@@ -7,7 +7,7 @@ import "./Buttons.css"
 const Buttons = () => {
     // let navigate = useNavigate()
     return (
-        <div className="container">
+        <div className="container1">
             <div className="header1">
                 <img src="2.jpg" alt="" />
                 <h1>WASSA</h1>
@@ -34,12 +34,13 @@ const Buttons = () => {
                     path="/BookRequestForm"
                 />
                 <Button
-                    icon={<Icon.ArrowUp />}
+                    icon={<img alt="handover" src="./Handover.png" />}
                     formName="Handover Form"
                     path="/HandoverForm"
+                // style={{ backgroundColor: "red" }}
                 />
                 <Button
-                    icon={<Icon.PenFill />}
+                    icon={<img alt="Reporting" src="./report.png" />}
                     formName="Reporting Forms"
                     path="/ReportingForm"
                 />

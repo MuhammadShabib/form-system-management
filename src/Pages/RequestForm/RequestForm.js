@@ -24,15 +24,12 @@ const RequestForm = () => {
     const [position4, setPosition4] = useState('');
     const [approvedBy, setApprovedBy] = useState('');
     const [position5, setPosition5] = useState('');
-    const [dateOfVerifiedBy, setDateOfVerifiedBy] = useState('');
-    const [dateOfCheckedBy, setDateOfCheckedBy] = useState('');
-    // const [dateOfApprovedBy, setDateOfApprovedBy] = useState('');
+
     const now = new Date();
     // Format the date components
     const day = ("0" + now.getDate()).slice(-2);
     const month = ("0" + (now.getMonth() + 1)).slice(-2);
     const today = now.getFullYear() + "-" + month + "-" + day;
-    // const date = document.getElementById("date1").value;
     return (
         <div className="container">
             <form>
@@ -84,8 +81,9 @@ const RequestForm = () => {
                 <p>Complete the information and obtain approvals below. Forward the completed and approved form to the Purchasing Department.</p>
                 <p>Note: Forms that are not approved or incomplete will be returned to the requisitioner.</p>
                 {/* Table */}
-                {/* Table End */}
+
                 <RequestTable />
+                {/* Table End */}
                 <p>The above items are required to be used for all classes in all centers</p>
                 {/* Third Part */}
                 <div>
@@ -142,7 +140,8 @@ const RequestForm = () => {
                         </div>
                         <div>
                             <label className="form-label">Date:</label>
-                            <input className="form-control" type="date" value={dateOfVerifiedBy} onChange={(e) => setDateOfVerifiedBy(e.target.value)} />
+
+                            <p>{today}</p>
                         </div>
                     </div>
                     <div className="on">
@@ -161,7 +160,8 @@ const RequestForm = () => {
 
                         </div>
                         <label className="form-label">Date:</label>
-                        <input className="form-control" type="date" value={dateOfCheckedBy} onChange={(e) => setDateOfCheckedBy(e.target.value)} />
+
+                        <p>{today}</p>
                     </div>
                     <div className="on">
                         <div>
@@ -175,12 +175,14 @@ const RequestForm = () => {
                             <label className="form-label">
                                 Position:
                             </label>
+
+
                             <input className="form-control" type="text" value={position5} onChange={(e) => setPosition5(e.target.value)} />
 
                         </div>
                         <div>
                             <label className="form-label">Date:</label>
-                            {/* <input className="form-control" type="date" value={dateOfApprovedBy} onChange={(e) => setDateOfApprovedBy(e.target.value)} /> */}
+
                             <p>{today}</p>
                         </div>
                     </div>

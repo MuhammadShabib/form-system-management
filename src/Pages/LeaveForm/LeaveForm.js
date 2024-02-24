@@ -14,13 +14,13 @@ const LeaveForm = () => {
     const [totalDays, setTotalDays] = useState('');
     const [totalHours, setTotalHours] = useState('');
     const [employee, setEmployee] = useState('');
-    // const [supervisorApproval, setSupervisorApproval] = useState('');
-    // const [doctorApproval, setDoctorApproval] = useState('');
     return (
 
         <>
             <div className="container">
-                <h1>WASSA Leave Request Form</h1>
+                <div className='beside'>
+                    <img className='me-5 ' src="./1.jpg" alt="" />
+                    <h3 className='ms-5 text-center'>WASSA Leave Request Form</h3></div>
                 <form >
                     {/* Employee Information Section */}
                     <div className='beside'>
@@ -102,7 +102,6 @@ const LeaveForm = () => {
                                 id="annualLeave"
                                 name="leaveType"
                                 value={annualLeave}
-                                // checked={leaveType === annualLeave}
                                 onChange={(e) => setAnnualLeave(e.target.value)}
                                 required
                             />
@@ -116,8 +115,6 @@ const LeaveForm = () => {
                                 id="sickLeave"
                                 name="leaveType"
                                 value={sickLeave}
-                                // checked={leaveType === sickLeave}
-                                // onChange={LeaveTypeHandler}
                                 onChange={(e) => setSickLeave(e.target.value)}
                                 required
                             />
@@ -131,9 +128,9 @@ const LeaveForm = () => {
                                 id="otherLeave"
                                 name="leaveType"
                                 placeholder="Other (Explain)"
-                                // checked={leaveType === otherLeave}
+
                                 value={otherLeave}
-                                // onChange={LeaveTypeHandler}
+
                                 onChange={(e) => setOtherLeave(e.target.value)}
                             />
 
@@ -154,7 +151,6 @@ const LeaveForm = () => {
                         />
 
                     </div>
-                    {/* Total Days and Hours Section */}
                     <p className='mt-3 fw-bold'>Total Days and Hours: </p>
                     <div className='beside'>
                         <div>
@@ -219,11 +215,10 @@ const LeaveForm = () => {
                             required
                         />
                     </div>
-                    {/* Employee’s Signature */}
                     <div className='beside mt-3'>
                         <div>
-                            <label className="form-label" htmlFor="employeeSignature">Employee’s Signature:</label>
-                            <div style={{ height: "100px", border: "1px solid black" }}></div>
+                            <label className="form-label" >Employee’s Signature:</label>
+                            <div style={{ height: "80px", border: "1px solid black" }}></div>
 
                         </div>
                         <div>
@@ -237,7 +232,6 @@ const LeaveForm = () => {
                             />
                         </div>
                     </div>
-                    {/* HR Section (For Human Resource Use Only) */}
                     <div className='mt-3'>
                         <p className='fw-bold'>DO NOT WRITE BELOW (For Human Resource Use only)</p>
                         <label className="form-label" htmlFor="leaveDaysAvailable">Number of leave days available:</label>
@@ -247,7 +241,7 @@ const LeaveForm = () => {
                                 type="number"
                                 id="leaveDaysAvailable"
                                 name="leaveDaysAvailable"
-                                // placeholder="Annual"
+
                                 disabled
                             />
                             <input
@@ -255,7 +249,7 @@ const LeaveForm = () => {
                                 type="number"
                                 id="leaveDaysAvailable"
                                 name="leaveDaysAvailable"
-                                // placeholder="Sick"
+
                                 disabled
                             />
                             <input
@@ -263,7 +257,7 @@ const LeaveForm = () => {
                                 type="number"
                                 id="leaveDaysAvailable"
                                 name="leaveDaysAvailable"
-                                // placeholder="Other"
+
                                 disabled
                             />
                         </div>
@@ -276,7 +270,7 @@ const LeaveForm = () => {
                                 type="number"
                                 id="leaveDaysRemaining"
                                 name="leaveDaysRemaining"
-                                // placeholder="Annual"
+
                                 disabled
                             />
                             <input
@@ -284,7 +278,7 @@ const LeaveForm = () => {
                                 type="number"
                                 id="leaveDaysRemaining"
                                 name="leaveDaysRemaining"
-                                // placeholder="Sick"
+
                                 disabled
                             />
                             <input
@@ -292,7 +286,7 @@ const LeaveForm = () => {
                                 type="number"
                                 id="leaveDaysRemaining"
                                 name="leaveDaysRemaining"
-                                // placeholder="Other"
+
                                 style={{ background: "fff !important", }}
 
                                 disabled
@@ -313,8 +307,9 @@ const LeaveForm = () => {
                             </div>
 
                             <div>
-                                <label className="form-label " htmlFor="preparedBySignature">Signature:</label>
-                                <input type="text " className='form-control sign' />
+                                <label className="form-label " >Signature:</label>
+                                <div style={{ width: "150px", height: "80px", border: "1px solid black" }}></div>
+
                             </div>
 
                             <div>
@@ -330,17 +325,14 @@ const LeaveForm = () => {
                         </div>
                     </div>
                     <div className='beside'>
-                        {/* Supervisor's Approval/Comments */}
                         <div>
-                            <label className="form-label" htmlFor="supervisorApproval">Supervisor's Approval/Comments:</label>
-                            <div style={{ width: "200px", height: "200px", border: "1px solid black" }}></div>
+                            <label className="form-label">Supervisor's Approval/Comments:</label>
+                            <div style={{ width: "300px", height: "80px", border: "1px solid black" }}></div>
 
                         </div>
-
-                        {/* Doctor's Approval */}
                         <div>
-                            <label className="form-label" htmlFor="doctorApproval">Doctor's Approval:</label>
-                            <div style={{ width: "200px", height: "200px", border: "0.5px solid black" }}></div>
+                            <label className="form-label" >Doctor's Approval:</label>
+                            <div style={{ width: "300px", height: "80px", border: "0.5px solid black" }}></div>
                         </div>
                     </div>
                     <PrintResetHome />

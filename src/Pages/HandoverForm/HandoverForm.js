@@ -13,8 +13,9 @@ const HandoverForm = () => {
         { sn: 1, name: '', qty: '', srNo: '', tag: '', status: '' }
     ]);
 
-    const handleAddRow = () => {
+    const handleAddRow = (e) => {
         setRows([...rows, { sn: rows.length + 1, name: '', qty: '', srNo: '', tag: '', status: '' }]);
+        e.preventDefault();
     };
 
     const handleDeleteRow = (index) => {
@@ -52,9 +53,9 @@ const HandoverForm = () => {
             <div className="container">
                 <form >
                     <div>
-                        <img src="path-to-logo" alt="WASSA Logo" />
-                        <h1>Women Activities and Social Services Association (WASSA)</h1>
-                        <h2>Equipment Handover Sheet</h2>
+                        <img src="./1.jpg" alt="WASSA Logo" />
+                        <h1 style={{ textAlign: "center" }}>Women Activities and Social Services Association (WASSA)</h1>
+                        <h2 style={{ textAlign: "center" }}>Equipment Handover Sheet</h2>
                         <p>Date: {new Date().toLocaleDateString('en-GB')}</p>
                         <div className='beside'>
                             < div>

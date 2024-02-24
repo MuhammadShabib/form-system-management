@@ -2,6 +2,7 @@ import { useState } from "react";
 import LinkButtons from "../../Components/Button/PrintResetHome"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../Pages.css"
+import "./BookRequestForm.css"
 const BookRequestForm = () => {
 
     const [receiverName, setReceiverName] = useState('');
@@ -15,7 +16,10 @@ const BookRequestForm = () => {
 
     return (
         <div className="container">
-            <h2>Book Rental Form</h2>
+            <div className="beside " style={{ alignItems: "center", gap: "120px" }}>
+                <img src="./1.jpg" alt="logo" />
+                <h2>Book Request Form</h2>
+            </div>
             <form >
                 <div className="beside">
                     <div>

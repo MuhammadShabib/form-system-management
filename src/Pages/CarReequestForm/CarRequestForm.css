@@ -7,6 +7,12 @@
     padding: 10px 20px;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .signature {
     display: flex;
     justify-content: space-between;
@@ -28,14 +34,17 @@
         margin: 0;
         padding: 0;
     }
+
     .container {
         box-shadow: none;
     }
+
     .car-request-form {
         border-radius: none;
         padding: 20px !important;
         border: 1px solid black;
     }
+
     .car-request-form input {
         padding: 10px 20px !important;
     }
