@@ -7,6 +7,7 @@ import CarRequestForm from "./Pages/CarReequestForm/CarRequestForm";
 import RequestForm from "./Pages/RequestForm/RequestForm";
 import BookRequestForm from "./Pages/BookRequestForm/BookRequestForm"
 import ReportingForm from "./Pages/ReportingForm/ReportingForm"
+// import Bnt from "./Components/Button/Bnt"
 // import InvoiceTable from "./Components/TableOfRequest/TableOfRequest";
 const App = () => {
     return (
@@ -23,7 +24,7 @@ const App = () => {
                     <Route path="*" element={<Buttons />} />
                 </Routes>
             </Router>
-
+            {/* <Bnt /> */}
         </>
 
     )
