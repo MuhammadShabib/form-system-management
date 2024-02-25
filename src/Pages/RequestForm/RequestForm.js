@@ -5,7 +5,7 @@ import "./RequestForm.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import RequestTable from "../../Components/TableOfRequest/TableOfRequest"
 const RequestForm = () => {
-    // const [dateOfRequest, setDateOfRequest] = useState('');
+    const [dateOfRequest, setDateOfRequest] = useState('');
     const [dateRequired, setDateRequired] = useState('');
     const [projectDepartment, setProjectDepartment] = useState('');
     const [budgetLine, setBudgetLine] = useState('');
@@ -24,12 +24,6 @@ const RequestForm = () => {
     const [position4, setPosition4] = useState('');
     const [approvedBy, setApprovedBy] = useState('');
     const [position5, setPosition5] = useState('');
-
-    const now = new Date();
-    // Format the date components
-    const day = ("0" + now.getDate()).slice(-2);
-    const month = ("0" + (now.getMonth() + 1)).slice(-2);
-    const today = now.getFullYear() + "-" + month + "-" + day;
     return (
         <div className="container">
             <form>
@@ -37,8 +31,8 @@ const RequestForm = () => {
                 <div className="beside">
                     <div>
                         <label className="form-label">Date of Request:</label>
-                        <input className="form-control" type="date" id="date1" value={today} />
-                        {/* value={dateOfRequest} onChange={(e) => setDateOfRequest(e.target.value)} */}
+                        <input className="form-control" type="date" id="date1" value={dateOfRequest} onChange={(e) => setDateOfRequest(e.target.value)} />
+
                     </div>
                     <div>
                         <label className="form-label">Date Required:</label>
@@ -141,7 +135,7 @@ const RequestForm = () => {
                         <div>
                             <label className="form-label">Date:</label>
 
-                            <p>{today}</p>
+                            <p>{dateOfRequest}</p>
                         </div>
                     </div>
                     <div className="on">
@@ -161,7 +155,7 @@ const RequestForm = () => {
                         </div>
                         <label className="form-label">Date:</label>
 
-                        <p>{today}</p>
+                        <p>{dateOfRequest}</p>
                     </div>
                     <div className="on">
                         <div>
@@ -183,7 +177,7 @@ const RequestForm = () => {
                         <div>
                             <label className="form-label">Date:</label>
 
-                            <p>{today}</p>
+                            <p>{dateOfRequest}</p>
                         </div>
                     </div>
 
